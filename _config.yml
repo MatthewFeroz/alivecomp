@@ -1,0 +1,18 @@
+# GitHub Pages Configuration
+# This enables Jekyll processing (even if minimal) for clean URLs
+
+# Exclude files from Jekyll processing (we're using static HTML)
+exclude:
+  - README.md
+  - .gitignore
+
+# Include all files
+include:
+  - _404.html
+
+# Set baseurl if your site is in a subdirectory
+# baseurl: "/your-repo-name"
+
+# Enable plugins (minimal for static site)
+plugins: []
+

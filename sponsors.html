@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my sponsors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans bg-white text-[#333] dark:bg-[#121212] dark:text-[#e0e0e0] w-full px-8 py-10 transition-[background-color,color] duration-200 ease-in-out">
+
+    <h1 class="text-3xl mb-3 font-semibold text-black dark:text-orange">Hi sponsors</h1>
+
+    <p class="mb-3 text-[#555] dark:text-[#b0b0b0]">Here are all the brands that I have worked with.</p>
+
+    <p class="mb-6 text-[#555] dark:text-[#b0b0b0]">
+        If you're a brand and want to run an ad on my channel, <a href="/sponsor-me" class="text-orange hover:text-orange-hover hover:underline transition-colors focus-visible:outline-2 focus-visible:outline-orange focus-visible:outline-offset-2">click here</a>
+    </p>
+
+    <h2 class="text-2xl mt-8 mb-4 font-semibold">video sponsors</h2>
+
+    <div id="sponsors-container" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
+        <!-- Sponsors will be rendered here dynamically -->
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="data/sponsors.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/theme.js"></script>
+    <script>
+        // Render sponsors and footer after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSponsors('sponsors-container');
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer) {
+                footerContainer.innerHTML = renderFooter({ 
+                    showSponsorLink: true, 
+                    sponsorLinkText: 'learn more here' 
+                });
+            }
+        });
+    </script>
+</body>
+</html>

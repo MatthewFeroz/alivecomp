@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Clean URL redirect handler for GitHub Pages
+        // This allows URLs without .html extension
+        
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+            
+            // Remove leading slash and trailing slash
+            path = path.replace(/^\/|\/$/g, '');
+            
+            // Remove repo name if site is in subdirectory (e.g., /repo-name/sponsors)
+            // GitHub Pages serves from root, so this handles both cases
+            var pathParts = path.split('/');
+            var lastPart = pathParts[pathParts.length - 1];
+            
+            // List of valid routes
+            var routes = {
+                '': 'index.html',
+                'home': 'index.html',
+                'sponsors': 'sponsors.html',
+                'sponsor-me': 'sponsor-me.html'
+            };
+            
+            // Check if last part matches a route
+            if (routes.hasOwnProperty(lastPart)) {
+                var redirectUrl = '/' + routes[lastPart] + search + hash;
+                window.location.replace(redirectUrl);
+            } else if (lastPart && !lastPart.includes('.')) {
+                // If path doesn't have extension and isn't a known route, try adding .html
+                var basePath = path.substring(0, path.lastIndexOf('/'));
+                var newPath = basePath ? basePath + '/' + lastPart + '.html' : '/' + lastPart + '.html';
+                window.location.replace(newPath + search + hash);
+            } else if (!lastPart || lastPart === '') {
+                // Empty path, go to index
+                window.location.replace('/index.html' + search + hash);
+            } else {
+                // Unknown route, redirect to home
+                window.location.replace('/index.html');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+    <noscript>
+        <p>Please enable JavaScript to use this site, or navigate directly to:</p>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/sponsors.html">Sponsors</a></li>
+            <li><a href="/sponsor-me.html">Sponsor Me</a></li>
+        </ul>
+    </noscript>
+</body>
+</html>
+
