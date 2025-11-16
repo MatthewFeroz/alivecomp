@@ -1,6 +1,6 @@
 .no-border-transition {
     border-color: #eee !important;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out !important;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
 }
 
 .dark .no-border-transition {

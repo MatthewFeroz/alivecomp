@@ -33,7 +33,7 @@ function renderLinkButton(link) {
     const targetAttr = link.url.startsWith('http') ? 'target="_blank"' : '';
     
     return `
-        <a href="${link.url}" ${targetAttr} class="group border-[#eee] dark:border-[#333] hover:bg-orange hover:border-orange hover:text-white relative w-full border py-3 text-center transition-colors duration-300 ease-out focus-visible:outline-2 focus-visible:outline-orange focus-visible:outline-offset-2">
+        <a href="${link.url}" ${targetAttr} class="group border-[#eee] dark:border-[#333] hover:bg-orange hover:border-orange hover:text-white relative w-full border py-5 px-6 text-center transition-colors duration-300 ease-out focus-visible:outline-2 focus-visible:outline-orange focus-visible:outline-offset-2">
             <span class="text-lg">${link.title}</span>
             <span class="text-[#555] dark:text-[#b0b0b0] group-hover:text-white/90 block text-sm transition-colors">${link.description}</span>
         </a>
