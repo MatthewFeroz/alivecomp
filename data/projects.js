@@ -10,24 +10,9 @@ const projects = [
         description: 'a chrome extension to bulk-download your lecture videos'
     },
     {
-        title: 'how ai works',
-        url: 'https://howaiworks.io',
-        description: 'open source interactive ai education — learn how ai works by doing'
-    },
-    {
         title: 'jiujitsu bench',
         url: 'https://github.com/MatthewFeroz/jiujitsu-bench',
         description: 'a benchmark to test llm spatial reasoning and logic'
-    },
-    {
-        title: 'benchmark atlas',
-        url: 'https://github.com/MatthewFeroz/ai-benchmark-hub',
-        description: 'a directory of ai benchmarks'
-    },
-    {
-        title: 'contentcode',
-        url: 'https://github.com/MatthewFeroz/contentcode',
-        description: 'an ai agent for content creation'
     }
 ];
 
