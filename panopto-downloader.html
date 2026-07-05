@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panopto Video Downloader</title>
+    <meta name="description" content="A Chrome extension that downloads the Panopto lecture recordings you already have access to — even the ones embedded in Canvas pages.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans bg-white text-[#333] dark:bg-[#121212] dark:text-[#e0e0e0] w-full px-8 py-10 transition-[background-color,color] duration-200 ease-in-out">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl mb-3 font-semibold text-orange dark:text-orange">Panopto Video Downloader</h1>
+
+        <p class="mb-3 text-[#555] dark:text-[#b0b0b0]">
+            a chrome extension that saves the panopto lecture recordings you already have access to —
+            even when they're buried inside canvas pages with no download button in sight.
+        </p>
+
+        <p class="mb-6 text-[#555] dark:text-[#b0b0b0]">
+            built it because my professor never puts his lectures in folders. now one click grabs the whole module.
+        </p>
+
+        <img src="images/panopto-downloader.jpg" alt="The extension panel on a Canvas page, listing five detected lectures with a Download All button"
+             class="w-full border border-[#eee] dark:border-[#333] no-border-transition my-8">
+
+        <h2 class="text-2xl mt-8 mb-4 font-semibold text-orange dark:text-orange">what it does</h2>
+
+        <ul class="mb-10 space-y-2 text-[#555] dark:text-[#b0b0b0] list-disc list-inside">
+            <li>finds every panopto video embedded in a canvas page — including LTI embeds — and lists them in one panel</li>
+            <li>downloads a whole panopto folder, a numbered range, or a single video from the viewer</li>
+            <li>saves everything into one subfolder of Downloads so a course stays organized</li>
+            <li>only downloads what your own account can already watch — no bypassing anything</li>
+        </ul>
+
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
+            <div class="border-[#eee] dark:border-[#333] no-border-transition relative w-full border py-5 px-6 text-center">
+                <span class="text-lg">chrome web store</span>
+                <span class="text-[#555] dark:text-[#b0b0b0] block text-sm">coming soon — under review</span>
+            </div>
+            <a href="https://github.com/MatthewFeroz/panopto-downloader-privacy" target="_blank" class="group border-[#eee] dark:border-[#333] hover:bg-orange hover:border-orange hover:text-white relative w-full border py-5 px-6 text-center transition-colors duration-300 ease-out focus-visible:outline-2 focus-visible:outline-orange focus-visible:outline-offset-2">
+                <span class="text-lg">privacy policy</span>
+                <span class="text-[#555] dark:text-[#b0b0b0] group-hover:text-white/90 block text-sm transition-colors">no data collected, everything runs locally</span>
+            </a>
+        </div>
+
+        <div id="footer-container"></div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/theme.js"></script>
+    <script>
+        // Render footer after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer) {
+                footerContainer.innerHTML = renderFooter({
+                    showSponsorLink: false
+                });
+            }
+        });
+    </script>
+</body>
+</html>
