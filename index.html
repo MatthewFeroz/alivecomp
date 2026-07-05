@@ -20,16 +20,24 @@
             <!-- Links will be rendered here dynamically -->
         </div>
 
+        <h2 class="text-2xl mt-8 mb-4 font-semibold text-orange dark:text-orange">projects</h2>
+
+        <div id="projects-container" class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <!-- Projects will be rendered here dynamically -->
+        </div>
+
         <div id="footer-container"></div>
     </div>
 
     <script src="data/links.js"></script>
+    <script src="data/projects.js"></script>
     <script src="js/components.js"></script>
     <script src="js/theme.js"></script>
     <script>
-        // Render links and footer after DOM is loaded
+        // Render links, projects, and footer after DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             renderPortfolioLinks('links-container');
+            renderProjects('projects-container');
             const footerContainer = document.getElementById('footer-container');
             if (footerContainer) {
                 footerContainer.innerHTML = renderFooter({ 

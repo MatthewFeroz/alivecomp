@@ -14,11 +14,6 @@ const portfolioLinks = [
         url: '/sponsors',
         description: 'the brands that are running ads on my youtube channel'
     },
-    {
-        title: 'panopto downloader',
-        url: '/panopto-downloader',
-        description: 'a chrome extension to bulk-download your lecture videos'
-    },
     // Add more links here as needed
     // Example:
     // {
